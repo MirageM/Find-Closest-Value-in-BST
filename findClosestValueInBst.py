@@ -1,11 +1,14 @@
-abs(target - closest) > abs(target - tree.value):
-closest = tree.value
-target < tree.value:
-	return findClosestValue(tree.right, target, closest)
-if target > tree.value:
-	return findClosestValue(tree.left, target, closest)
-else:
-	return closest
-
-	change
-	need to create code again
+def findClosestValueInBst(tree, target):
+	return findClosestValueInBstHelper(tree, target, tree.value)
+def findClosestValueInBstHelper(tree, target, closest):
+	if tree is None:
+		return closest
+	if abs(target - closest) > abs(target - tree.value):
+		closest = tree.value
+	if target > tree.value:
+		return findClosestValueInBstHelper(tree.right, target, closest)
+	elif target < tree.value:
+		return findClosestValueInBstHelper(tree.left, target, closest)
+	else:
+		return closest
+	
