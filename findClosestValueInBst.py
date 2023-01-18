@@ -12,4 +12,7 @@ def findClosestValueInBstHelper(tree, target, closest):
 	else:
 		return closest
 
-# 
+#Finds the Closest Time in a BST
+#Best Case: O(log(n)) time | O(log(n)) space
+#Average Case: O(log(n)) time | O(log(n)) space
+#Worst Case: O(n) time | O(n) space
